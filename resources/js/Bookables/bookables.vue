@@ -9,9 +9,7 @@
           :key="'row' + row + column"
         >
           <bookable-list-item
-            :title="bookable.title"
-            :content="bookable.description"
-            :price="1000"
+            v-bind="bookable"
           ></bookable-list-item>
         </div>
 
@@ -22,6 +20,7 @@
 </template>
 
 <script>
+
 import BookableListItem from "./bookableListItem";
 
 export default {
@@ -51,7 +50,8 @@ export default {
   created() {
     this.loading = true;
     const request = axios.get('/api/bookables').then(response => {
-        this.bookables = response.data;
+        this.bookables = response.data.data;
+        //this.bookables.push({/////////})
         this.loading = false;
         });
   }
