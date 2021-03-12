@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Bookable extends Model
 {
     use HasFactory;
+
+    public function bookings(){
+        return $this->hasMany(Booking::class);
+    }
+
+    public function availableFor($from ,$to)
+    {
+        return $this->bookings()->betweenDates($from,$to)->count();
+    }
 }
