@@ -29,6 +29,9 @@
 
 <script>
 export default({
+    props: {
+        bookableId : String,
+    },
     data() {
       return{
           from     : null,
@@ -44,7 +47,7 @@ export default({
             this.errors = null ;   // to get new fresh errors every request
 
 
-            axios.get(`/api/bookable/${this.$route.params.id}/show?from=${this.from}&to=${this.to}`)
+            axios.get(`/api/bookable/${this.boookableId}/show?from=${this.from}&to=${this.to}`)
             .then(response => {
                 this.status  = response.status; })
                 .catch(error => {         //any code other than the 200s
