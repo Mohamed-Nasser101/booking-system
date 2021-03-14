@@ -9,3 +9,8 @@
         </div>
     </div>
 </template>
+<style scoped>
+.container{
+    max-width: 1000px;
+}
+</style>

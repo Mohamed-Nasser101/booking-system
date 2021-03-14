@@ -7,11 +7,16 @@
   <component name="ChangeListManager">
     <list default="true" id="13b1558a-8110-454d-99b9-c66b2412ff05" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Bookable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Bookable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_ide_helper_models.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper_models.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Booking.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Booking.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Review.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Review.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_12_011159_create_bookings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_12_011159_create_bookings_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Bookable/bookable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Bookable/bookable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Bookable/availability.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Bookable/availability.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Bookable/reviewList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Bookable/reviewList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/shared/components/StarRating.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/shared/components/StarRating.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +38,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.0">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
@@ -169,7 +174,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.idesettings.emmet" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -184,11 +189,23 @@
       <command value="php artisan make:resource BookableReviewResource" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.ReviewController.php">
+    <configuration name="ReviewController.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Booking/Http/Controllers/Api/ReviewController.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <configuration name="ReviewController.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/Http/Controllers/Api/ReviewController.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.ReviewController.php" />
+        <item itemvalue="PHP Script.ReviewController.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -204,6 +221,10 @@
       <workItem from="1615502542123" duration="659000" />
       <workItem from="1615522245368" duration="7532000" />
       <workItem from="1615536120075" duration="5899000" />
+      <workItem from="1615633126795" duration="1510000" />
+      <workItem from="1615634951250" duration="2319000" />
+      <workItem from="1615638489924" duration="7094000" />
+      <workItem from="1615689649753" duration="6814000" />
     </task>
     <task id="LOCAL-00001" summary="add booking &amp; get api from backend">
       <created>1615529783653</created>
@@ -235,41 +256,53 @@
     <option name="LAST_COMMIT_MESSAGE" value="add booking &amp; get api from backend" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="437" y="187" key="#Notifications" timestamp="1615538175426">
+    <state x="624" y="287" key="#Custom_Plugin_Repositories" timestamp="1615693330317">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="437" y="187" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1615538175426" />
+    <state x="624" y="287" key="#Custom_Plugin_Repositories/0.0.1366.728@0.0.1366.728" timestamp="1615693330317" />
+    <state x="437" y="187" key="#Notifications" timestamp="1615689926480">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="437" y="187" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1615689926480" />
+    <state x="390" y="6" key="#PHP" timestamp="1615646733260">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="390" y="6" key="#PHP/0.0.1366.728@0.0.1366.728" timestamp="1615646733260" />
     <state x="451" y="193" key="#com.intellij.tools.ToolEditorDialog" timestamp="1615355736676">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="451" y="193" key="#com.intellij.tools.ToolEditorDialog/0.0.1366.728@0.0.1366.728" timestamp="1615355736676" />
-    <state width="1323" height="303" key="GridCell.Tab.0.bottom" timestamp="1615543801241">
+    <state x="463" y="104" key="FileChooserDialogImpl" timestamp="1615693072211">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="303" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1615543801241" />
-    <state width="1323" height="303" key="GridCell.Tab.0.center" timestamp="1615543801241">
+    <state x="463" y="104" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1615693072211" />
+    <state width="1323" height="303" key="GridCell.Tab.0.bottom" timestamp="1615646790137">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="303" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1615543801241" />
-    <state width="1323" height="303" key="GridCell.Tab.0.left" timestamp="1615543801241">
+    <state width="1323" height="303" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1615646790137" />
+    <state width="1323" height="303" key="GridCell.Tab.0.center" timestamp="1615646790137">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="303" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1615543801241" />
-    <state width="1323" height="303" key="GridCell.Tab.0.right" timestamp="1615543801241">
+    <state width="1323" height="303" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1615646790137" />
+    <state width="1323" height="303" key="GridCell.Tab.0.left" timestamp="1615646790137">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="303" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1615543801241" />
-    <state x="184" y="8" key="SettingsEditor" timestamp="1615539048509">
+    <state width="1323" height="303" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1615646790137" />
+    <state width="1323" height="303" key="GridCell.Tab.0.right" timestamp="1615646790137">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1615539048509" />
+    <state width="1323" height="303" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1615646790137" />
+    <state x="310" y="17" key="SettingsEditor" timestamp="1615695962258">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="310" y="17" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1615695962258" />
     <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1615542350535">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1615542350535" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1615541754147">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1615695069930">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1615541754147" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1615695069930" />
   </component>
 </project>

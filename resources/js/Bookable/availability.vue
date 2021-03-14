@@ -9,7 +9,7 @@
       <div class="form-group col-md-6">
         <label for="from">From</label>
         <input type="text" name="from" class="form-control form-control-sm" placeholder="Start date"
-               v-model="from" @keyup.enter="check" :class="{'is-invalid' : this.errorFor('from')}"/>
+               v-model="from" @keyup.enter="check" :class="{'is-invalid' : this.errorFor('from')}" required/>
           <div class="invalid-feedback" v-for="(error,index) in this.errorFor('from')" :key="'from' + index">
               {{ index+1 +'-'+error }}
           </div>
@@ -18,7 +18,7 @@
       <div class="form-group col-md-6">
         <label for="to">To</label>
         <input type="text" name="to" class="form-control form-control-sm" placeholder="End date" v-model="to"
-               @keyup.enter="check" :class="{'is-invalid' : this.errorFor('to')}"/>
+               @keyup.enter="check" :class="{'is-invalid' : this.errorFor('to')}" required/>
           <div class="invalid-feedback" v-for="(error,index) in this.errorFor('to')" :key="'to' + index"> {{  index+1 +'-'+error }}</div>
       </div>
     </div>
@@ -45,7 +45,6 @@ export default({
         check(){   //but this not i dont kow why
             this.loading = true;
             this.errors = null ;   // to get new fresh errors every request
-
 
             axios.get(`/api/bookable/${this.boookableId}/show?from=${this.from}&to=${this.to}`)
             .then(response => {
