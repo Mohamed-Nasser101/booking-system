@@ -30,7 +30,7 @@
 <script>
 export default({
     props: {
-        bookableId : String,
+        bookableId : [String,Number],
     },
     data() {
       return{
@@ -52,6 +52,7 @@ export default({
                 .catch(error => {         //any code other than the 200s
                 if (error.response.status === 422){    //something went wrong not the wrong we submit
                     this.errors = error.response.data.errors;
+
                 }
                 this.status = error.response.status;
             });
@@ -75,8 +76,6 @@ export default({
     },
 })
 </script>
-
-
 <style scoped>
 label {
   font-size: 0.7rem;

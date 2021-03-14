@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="row" v-if="error">Unkown error try again</div>
+        <fatal-error v-if="error"></fatal-error>
         <div class="row" v-else>
             <div :class="[{'col-md-4' : loading || !alreadyReviewed },{'d-none' : !loading && alreadyReviewed}]">
                 <div class="card">
@@ -26,8 +26,11 @@
                         </div>
                         <div class="form-group">
                             <label for="content" class="text-muted">Write your opinion</label>
-                            <textarea name="content" cols="30" row="10" class="form-control"
-                                      v-model="review.content"></textarea>
+                            <textarea name="content" cols="30" rows="10" class="form-control"
+                                      :class="{'is-invalid' : errorFor('content')}" required v-model="review.content"></textarea>
+                        </div>
+                        <div class="invalid-feedback" v-for="(error,index) in errorFor('content')" :key="'content' + index">
+                            {{ error }}
                         </div>
                         <button class="btn btn-primary btn-block" @click.prevent="submit" :disabled="loading">Submit</button>
                     </div>
@@ -42,20 +45,21 @@ export default {
         return{
             review :{
                 id : null,
-                rating : 0,
+                rating : 1,
                 content : null,
             },
-            existingReivew: null,
+            existingReview: null,
             loading: false,
             booking: null,
             error : false,
+            validationErrors : null,
         };
     },
     created() {
         this.review.id = this.$route.params.id;
         this.loading = true;
         axios.get(`/api/reviews/${this.review.id}`)
-        .then(response => { this.existingReivew = response.data.data; }) // if you don't use curly brackets it will retun
+        .then(response => { this.existingReview = response.data.data; }) // if you don't use curly brackets it will retun
         .catch(err => {
             if(err.response && err.response.status && err.response.status === 404 ) {
                 return axios.get(`/api/booking-by-review/${this.review.id}`)
@@ -77,7 +81,7 @@ export default {
             return this.hasReview || !this.booking ;
         },
         hasReview() {
-          return this.existingReivew !== null;
+          return this.existingReview !== null;
         },
         hasBooking() {
           return this.booking !== null;
@@ -85,11 +89,24 @@ export default {
     },
     methods:{
         submit() {
+          this.validationErrors = null;
           this.loading = true;
           axios.post(`/api/reviews`,this.review)
             .then(response => console.log(response))
-            .catch(err => this.error = err)
+            .catch(err => {
+                if(err.response.status === 422){
+                     const errors= err.response.data.errors;
+                     if(errors['content'] && _.size(errors) === 1 ){
+                         this.validationErrors = errors;
+                         return;
+                     }
+                }
+                this.error = true;
+            })
             .then(() => this.loading = false);
+        },
+        errorFor(field){
+            return (this.validationErrors !== null  && this.validationErrors[field] ) ? this.validationErrors[field] : null ;
         },
     }
 }
