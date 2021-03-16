@@ -34,17 +34,27 @@ export default({
     },
     data() {
       return{
-          from     : null,
-          to          : null,
-          loading : false,
-          status    : null,
-          errors    : null
+          from     : this.$store.state.lastSearch.from,
+          to       : this.$store.state.lastSearch.to,
+          loading  : false,
+          status   : null,
+          errors   : null
       };
     },
     methods: {    //dont access it with this
         check(){   //but this not i dont kow why
             this.loading = true;
             this.errors = null ;   // to get new fresh errors every request
+
+            // this.$store.commit('setLastSearch',{
+            //    from: this.from,
+            //    to: this.to,
+            // });
+
+            this.$store.dispatch('setLastSearch',{
+                from: this.from,
+                to: this.to,
+            });
 
             axios.get(`/api/bookable/${this.boookableId}/show?from=${this.from}&to=${this.to}`)
             .then(response => {

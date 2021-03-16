@@ -10,13 +10,15 @@
   <component name="ChangeListManager">
     <list default="true" id="13b1558a-8110-454d-99b9-c66b2412ff05" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_11_105431_create_bookables_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_11_105431_create_bookables_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Bookable/availability.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Bookable/availability.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Review/review.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Review/review.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +33,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -173,7 +176,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -225,7 +228,10 @@
       <workItem from="1615638489924" duration="7094000" />
       <workItem from="1615689649753" duration="8647000" />
       <workItem from="1615707697566" duration="5090000" />
-      <workItem from="1615718349528" duration="3235000" />
+      <workItem from="1615718349528" duration="5754000" />
+      <workItem from="1615773441279" duration="2992000" />
+      <workItem from="1615779292962" duration="4538000" />
+      <workItem from="1615798397381" duration="2366000" />
     </task>
     <task id="LOCAL-00001" summary="add booking &amp; get api from backend">
       <created>1615529783653</created>
@@ -297,10 +303,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="263" y="98" key="IDE.errors.dialog/0.0.1366.728@0.0.1366.728" timestamp="1615698932745" />
-    <state x="-316" y="17" key="SettingsEditor" timestamp="1615709232002">
+    <state x="366" y="0" key="SettingsEditor" timestamp="1615779543899">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="-316" y="17" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1615709232002" />
+    <state x="366" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1615779543899" />
     <state x="404" y="105" width="540" height="524" key="StructurePopup" timestamp="1615698230863">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -309,9 +315,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1615542350535" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1615713514606">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1615801124923">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1615713514606" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1615801124923" />
   </component>
 </project>

@@ -17,7 +17,7 @@ class CreateBookablesTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->integer('price');
+            $table->unsignedInteger('price');
             $table->timestamps();
         });
     }
