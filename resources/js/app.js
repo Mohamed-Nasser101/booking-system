@@ -33,12 +33,7 @@ const app = new Vue({
     components: {
         "index" : index
     },
-    async beforeCreate() {
+    beforeCreate() {
         this.$store.dispatch("loadStoredState");
-        await axios.get('/sanctum/csrf-cookie');
-        await axios.post("/login",{
-            email : "zzzz",
-            password : "zzzzzzzz"
-        });
     },
 });
