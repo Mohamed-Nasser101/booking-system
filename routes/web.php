@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{any}', function () {
+Route::middleware('auth')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
+Route::get('/', function () {
     return view('welcome');
-})->where('any','^(?!api\/)[\/\w\.\,-]*');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

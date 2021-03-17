@@ -19,9 +19,10 @@ class CreateBookingsTable extends Migration
             $table->date('to');
             $table->foreignId('bookable_id')->index();
             $table->uuid('review_key');
+            $table->unsignedInteger('price')->default(0);
             $table->timestamps();
-
             $table->foreign('bookable_id')->references('id')->on('bookables')->onDelete('cascade');
+           
         });
     }
 
