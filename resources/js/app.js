@@ -1,3 +1,4 @@
+ require('alpinejs');
 require('./bootstrap');
 import 'bootstrap';
 import StoreDefenition from "./store";
@@ -14,4 +15,30 @@ import StarRating from "./shared/components/StarRating";
 import fatalError from "./shared/components/fatalError";
 import Success from "./shared/components/Success";
 
-require('alpinejs');
+Vue.filter("fromNow",value => moment(value).fromNow());
+
+Vue.component('star-rating',StarRating);
+Vue.component('fatal-error',fatalError);
+Vue.component('success-view',Success);
+
+Vue.use(VueRouter);
+Vue.use(Vuex);
+
+const store = new Vuex.Store(StoreDefenition);
+
+const app = new Vue({
+    el : "#app",
+    router,
+    store,
+    components: {
+        "index" : index
+    },
+    async beforeCreate() {
+        this.$store.dispatch("loadStoredState");
+        await axios.get('/sanctum/csrf-cookie');
+        await axios.post("/login",{
+            email : "zzzz",
+            password : "zzzzzzzz"
+        });
+    },
+});
